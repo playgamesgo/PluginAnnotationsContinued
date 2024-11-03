@@ -27,6 +27,30 @@ version = '1.2.4-SNAPSHOT'
 description = 'Plugin Annotations'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
+publishing {
+    repositories {
+        maven {
+            name = "mirageRepository"
+            url = "https://repo.mirage-play.com/releases"
+            credentials {
+                username = System.getenv("USERNAME")
+                password = System.getenv("TOKEN")
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            groupId = group
+            artifactId = project.name
+            version = version
+            from components.java
+        }
+    }
+}
+
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'

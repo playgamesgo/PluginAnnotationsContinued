@@ -2,7 +2,10 @@
 Add PluginAnnotationContinued as a dependency in your gradle build file to enable automatic annotation-based plugin.yml generation.
 ```groovy
 repositories {
-    mavenCentral()
+    maven {
+        name = "mirageRepositoryReleases"
+        url = uri("https://repo.mirage-play.com/releases")
+    }
 }
 
 dependencies {
