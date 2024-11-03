@@ -9,8 +9,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly "me.playgamesgo:plugin-annotations-continued:1.2.4-SNAPSHOT"
-    annotationProcessor "me.playgamesgo:plugin-annotations-continued:1.2.4-SNAPSHOT"
+    compileOnly "me.playgamesgo:plugin-annotations-continued:1.3.0-SNAPSHOT"
+    annotationProcessor "me.playgamesgo:plugin-annotations-continued:1.3.0-SNAPSHOT"
 }
 ```
 

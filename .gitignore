@@ -32,3 +32,4 @@ st# Eclipse stuff
 
 .gradle/
 build/
+plugin-annotations.iml

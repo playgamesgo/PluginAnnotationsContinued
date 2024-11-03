@@ -51,7 +51,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-@SupportedAnnotationTypes( "org.bukkit.plugin.java.annotation.*" )
+@SupportedAnnotationTypes("me.playgamesgo.plugin.annotation.*")
 @SupportedSourceVersion( SourceVersion.RELEASE_8 )
 public class PluginAnnotationProcessor extends AbstractProcessor {
 

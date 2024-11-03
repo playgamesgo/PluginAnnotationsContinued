@@ -23,34 +23,56 @@ dependencies {
 }
 
 group = 'me.playgamesgo'
-version = '1.2.4-SNAPSHOT'
+version = '1.3.0-SNAPSHOT'
 description = 'Plugin Annotations'
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
-publishing {
-    repositories {
-        maven {
-            name = "mirageRepository"
-            url = "https://repo.mirage-play.com/releases"
-            credentials {
-                username = System.getenv("USERNAME")
-                password = System.getenv("TOKEN")
-            }
-            authentication {
-                basic(BasicAuthentication)
-            }
-        }
-    }
-    publications {
-        maven(MavenPublication) {
-            groupId = group
-            artifactId = project.name
-            version = version
-            from components.java
-        }
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+    archiveClassifier.set('sources')
+}
+
+jar {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    from('src/main/resources/META-INF/services') {
+        into('META-INF/services')
     }
 }
 
+afterEvaluate {
+    publishing {
+        repositories {
+            maven {
+                name = "mirageRepository"
+                url = "https://repo.mirage-play.com/releases"
+                credentials {
+                    username = System.getenv("USERNAME")
+                    password = System.getenv("TOKEN")
+                }
+                authentication {
+                    basic(BasicAuthentication)
+                }
+            }
+        }
+        publications {
+            maven(MavenPublication) {
+                groupId = group
+                artifactId = project.name
+                version = version
+                from(components.java)
+                artifact(sourceJar) {
+                    classifier "sources"
+                }
+
+                pom {
+                    name = project.name
+                    description = project.description
+                    url = "https://github.com/playgamesgo/PluginAnnotationsContinued"
+                }
+            }
+        }
+    }
+}
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
