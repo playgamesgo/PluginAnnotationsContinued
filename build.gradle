@@ -1,0 +1,36 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://hub.spigotmc.org/nexus/content/groups/public/')
+    }
+
+    maven {
+        url = uri('https://oss.sonatype.org/content/repositories/snapshots')
+    }
+
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    api libs.org.bukkit.bukkit
+}
+
+group = 'org.spigotmc'
+version = '1.2.4-SNAPSHOT'
+description = 'Plugin Annotations'
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
