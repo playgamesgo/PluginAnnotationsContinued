@@ -1,4 +1,4 @@
-package org.bukkit.plugin.java.annotation.plugin.author;
+package me.playgamesgo.plugin.annotation.dependency;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -10,16 +10,18 @@ import java.lang.annotation.Target;
 /**
  *  Part of the plugin annotations framework.
  *  <p>
- *  Represents the author(s) of the plugin. Translates to {@code author}
- *  in plugin.yml if a single author, otherwise {@code authors}
+ *  Represents the plugin this plugin should be loaded before
+ *  <br>
+ *  The plugin's <b>name</b> attribute is required in order to specify the target. <br>
+ *  The plugin listed will be treated as a {@link SoftDependency}. <br>
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@Repeatable(Authors.class)
-public @interface Author {
+@Repeatable(LoadBeforePlugins.class)
+public @interface LoadBefore {
     /**
-     * The name of the person who developed this plugin.
+     * A plugin that should be loaded after your plugin
      */
     String value();
 }

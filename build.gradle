@@ -1,5 +1,6 @@
 plugins {
     id 'java-library'
+    id 'maven-publish'
 }
 
 repositories {
@@ -21,7 +22,7 @@ dependencies {
     api libs.org.bukkit.bukkit
 }
 
-group = 'org.spigotmc'
+group = 'me.playgamesgo'
 version = '1.2.4-SNAPSHOT'
 description = 'Plugin Annotations'
 java.sourceCompatibility = JavaVersion.VERSION_1_8

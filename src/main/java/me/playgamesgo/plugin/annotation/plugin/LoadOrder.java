@@ -1,4 +1,4 @@
-package org.bukkit.plugin.java.annotation.plugin;
+package me.playgamesgo.plugin.annotation.plugin;
 
 import org.bukkit.plugin.PluginLoadOrder;
 

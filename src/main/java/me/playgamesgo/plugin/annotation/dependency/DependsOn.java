@@ -1,4 +1,4 @@
-package org.bukkit.plugin.java.annotation.permission;
+package me.playgamesgo.plugin.annotation.dependency;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -9,14 +9,14 @@ import java.lang.annotation.Target;
 /**
  * Part of the plugin annotations framework.
  * <p>
- * Represents a list of this plugin's registered name.
+ * Represents the plugins a plugin depends on in order to be loaded
  * <br>
  * This specific annotation should not be used by people who do not know
  * how repeating annotations work.
  */
 @Documented
-@Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface Permissions {
-    Permission[] value() default {};
+@Retention(RetentionPolicy.RUNTIME)
+public @interface DependsOn {
+    Dependency[] value() default {};
 }

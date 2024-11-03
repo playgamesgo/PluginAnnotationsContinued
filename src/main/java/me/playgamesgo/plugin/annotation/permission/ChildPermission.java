@@ -1,4 +1,4 @@
-package org.bukkit.plugin.java.annotation.permission;
+package me.playgamesgo.plugin.annotation.permission;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

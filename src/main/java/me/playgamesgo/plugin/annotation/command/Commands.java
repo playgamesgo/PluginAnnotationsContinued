@@ -1,4 +1,4 @@
-package org.bukkit.plugin.java.annotation.dependency;
+package me.playgamesgo.plugin.annotation.command;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -9,15 +9,14 @@ import java.lang.annotation.Target;
 /**
  * Part of the plugin annotations framework.
  * <p>
- * Represents the libraries a plugin depends on in order to be loaded
+ * Represents a list of this plugin's registered command(s).
  * <br>
- * This specific annotation should not be used by people who do not know how
- * repeating annotations work.
+ * This specific annotation should not be used by people who do not know
+ * how repeating annotations work.
  */
 @Documented
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Libraries {
-
-    Library[] value() default {};
+public @interface Commands {
+    Command[] value() default {};
 }

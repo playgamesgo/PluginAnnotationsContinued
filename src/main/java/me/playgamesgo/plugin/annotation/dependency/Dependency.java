@@ -1,4 +1,4 @@
-package org.bukkit.plugin.java.annotation.dependency;
+package me.playgamesgo.plugin.annotation.dependency;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

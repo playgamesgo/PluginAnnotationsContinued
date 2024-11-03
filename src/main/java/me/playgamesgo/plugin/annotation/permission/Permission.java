@@ -1,7 +1,6 @@
-package org.bukkit.plugin.java.annotation.permission;
+package me.playgamesgo.plugin.annotation.permission;
 
 import org.bukkit.permissions.PermissionDefault;
-import org.bukkit.plugin.java.annotation.plugin.author.Authors;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

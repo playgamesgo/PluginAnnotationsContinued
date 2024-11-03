@@ -1,5 +1,15 @@
 # Usage
-Add this jar to your pom.xml to enable automatic annotation-based plugin.yml generation.
+Add PluginAnnotationContinued as a dependency in your gradle build file to enable automatic annotation-based plugin.yml generation.
+```groovy
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly "me.playgamesgo:plugin-annotations-continued:1.2.4-SNAPSHOT"
+    annotationProcessor "me.playgamesgo:plugin-annotations-continued:1.2.4-SNAPSHOT"
+}
+```
 
 The only *required* annotation is the ```@Plugin``` annotation. All other annotations are optional.
 See the [wiki](https://www.spigotmc.org/wiki/plugin-yml/) for more information.
@@ -26,9 +36,9 @@ public class TestPlugin extends JavaPlugin {
 Output:
 
 ```
-# Auto-generated plugin.yml, generated at 2018/07/12 22:16:27 by org.bukkit.plugin.java.annotation.PluginAnnotationProcessor
+# Auto-generated plugin.yml, generated at 2018/07/12 22:16:27 by me.playgamesgo.plugin.annotation.PluginAnnotationProcessor
 
-# Auto-generated plugin.yml, generated at 2018/07/13 00:16:24 by org.bukkit.plugin.java.annotation.PluginAnnotationProcessor
+# Auto-generated plugin.yml, generated at 2018/07/13 00:16:24 by me.playgamesgo.plugin.annotation.PluginAnnotationProcessor
 
 main: org.spigotmc.spigot.TestPlugin
 name: TestPlugin
@@ -76,3 +86,6 @@ public class TestCommand implements CommandExecutor {
 As of version 1.2.0-SNAPSHOT the ```@ApiVersion``` annotation was introduced to bring compatibility for
 Bukkit's new ```api-version``` plugin.yml option. This defaults to ```ApiVersion.Target.DEFAULT``` if not specified or included.
 All pre-1.13 plugins MUST use ```ApiVersion.Target.DEFAULT``` in order for the plugin to be loaded correctly.
+
+# Disclaimer
+Originally created by md_5, this project is a fork of the original project by md_5. The original project can be found [here](https://hub.spigotmc.org/stash/projects/SPIGOT/repos/plugin-annotations/browse).
